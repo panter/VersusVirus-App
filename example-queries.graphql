@@ -12,7 +12,7 @@
 
 # Get Users
 {
-  users(first: 50) {
+  users(take: 50) {
     firstname
     lastname
     email
@@ -31,10 +31,7 @@
 
 # Users with admin role
 {
-  users(
-    where: {
-      roles: {some: {id: {equals: "admin"}}}
-    }) {
+  users(where: { roles: { some: { id: { equals: "admin" } } } }) {
     id
     roles {
       id

@@ -20,13 +20,13 @@ type Challenge {
   id: String!
   organization: String
   primaryTopic: HackerTopic!
-  projects(skip: Int): [Project!]!
+  projects(cursor: ProjectWhereUniqueInput, skip: Int, take: Int): [Project!]!
   resources: String
   solution: String
-  teamsThatCanSelectThisChallenge(skip: Int): [Team!]!
-  teamsThatSelectedThisChallenge(skip: Int): [Team!]!
+  teamsThatCanSelectThisChallenge(cursor: TeamWhereUniqueInput, skip: Int, take: Int): [Team!]!
+  teamsThatSelectedThisChallenge(cursor: TeamWhereUniqueInput, skip: Int, take: Int): [Team!]!
   title: String!
-  usersThatPreferThisChallenge(skip: Int): [User!]!
+  usersThatPreferThisChallenge(cursor: UserWhereUniqueInput, skip: Int, take: Int): [User!]!
 }
 
 input ChallengeCreateInput {
@@ -660,7 +660,7 @@ input HackerSkillWhereUniqueInput {
 type HackerTopic {
   description: String!
   id: String!
-  primaryChallenges(skip: Int): [Challenge!]!
+  primaryChallenges(cursor: ChallengeWhereUniqueInput, skip: Int, take: Int): [Challenge!]!
   slack: SlackConversation
   title: String!
 }
@@ -1202,7 +1202,7 @@ type Mentor {
   linkedin: String!
   name: String!
   skills: String!
-  topics(skip: Int): [HackerTopic!]!
+  topics(cursor: HackerTopicWhereUniqueInput, skip: Int, take: Int): [HackerTopic!]!
 }
 
 input MentorCreateInput {
@@ -1456,7 +1456,7 @@ type Project {
   challenge: Challenge
   description: String
   id: String!
-  images(skip: Int): [Image!]!
+  images(cursor: ImageWhereUniqueInput, skip: Int, take: Int): [Image!]!
   isPublished: Boolean!
   learnings: String
   longTermImpact: String
@@ -1878,42 +1878,42 @@ input ProjectWhereUniqueInput {
 
 type Query {
   challenge(where: ChallengeWhereUniqueInput!): Challenge
-  challenges(orderBy: ChallengeOrderByInput, skip: Int, where: ChallengeWhereInput): [Challenge!]!
-  challengesCount: Int!
+  challenges(cursor: ChallengeWhereUniqueInput, orderBy: ChallengeOrderByInput, skip: Int, take: Int, where: ChallengeWhereInput): [Challenge!]!
+  challengesCount(cursor: ChallengeWhereUniqueInput, orderBy: ChallengeOrderByInput, skip: Int, take: Int, where: ChallengeWhereInput): Int!
   hackerSkill(where: HackerSkillWhereUniqueInput!): HackerSkill
-  hackerSkills(orderBy: HackerSkillOrderByInput, skip: Int, where: HackerSkillWhereInput): [HackerSkill!]!
-  hackerSkillsCount: Int!
+  hackerSkills(cursor: HackerSkillWhereUniqueInput, orderBy: HackerSkillOrderByInput, skip: Int, take: Int, where: HackerSkillWhereInput): [HackerSkill!]!
+  hackerSkillsCount(cursor: HackerSkillWhereUniqueInput, orderBy: HackerSkillOrderByInput, skip: Int, take: Int, where: HackerSkillWhereInput): Int!
   hackerTopic(where: HackerTopicWhereUniqueInput!): HackerTopic
-  hackerTopics(orderBy: HackerTopicOrderByInput, skip: Int, where: HackerTopicWhereInput): [HackerTopic!]!
-  hackerTopicsCount: Int!
+  hackerTopics(cursor: HackerTopicWhereUniqueInput, orderBy: HackerTopicOrderByInput, skip: Int, take: Int, where: HackerTopicWhereInput): [HackerTopic!]!
+  hackerTopicsCount(cursor: HackerTopicWhereUniqueInput, orderBy: HackerTopicOrderByInput, skip: Int, take: Int, where: HackerTopicWhereInput): Int!
   hackerType(where: HackerTypeWhereUniqueInput!): HackerType
-  hackerTypes(orderBy: HackerTypeOrderByInput, skip: Int, where: HackerTypeWhereInput): [HackerType!]!
-  hackerTypesCount: Int!
+  hackerTypes(cursor: HackerTypeWhereUniqueInput, orderBy: HackerTypeOrderByInput, skip: Int, take: Int, where: HackerTypeWhereInput): [HackerType!]!
+  hackerTypesCount(cursor: HackerTypeWhereUniqueInput, orderBy: HackerTypeOrderByInput, skip: Int, take: Int, where: HackerTypeWhereInput): Int!
   image(where: ImageWhereUniqueInput!): Image
-  images(orderBy: ImageOrderByInput, skip: Int, where: ImageWhereInput): [Image!]!
-  imagesCount: Int!
+  images(cursor: ImageWhereUniqueInput, orderBy: ImageOrderByInput, skip: Int, take: Int, where: ImageWhereInput): [Image!]!
+  imagesCount(cursor: ImageWhereUniqueInput, orderBy: ImageOrderByInput, skip: Int, take: Int, where: ImageWhereInput): Int!
   me: User
   mentor(where: MentorWhereUniqueInput!): Mentor
-  mentors(orderBy: MentorOrderByInput, skip: Int, where: MentorWhereInput): [Mentor!]!
-  mentorsCount: Int!
+  mentors(cursor: MentorWhereUniqueInput, orderBy: MentorOrderByInput, skip: Int, take: Int, where: MentorWhereInput): [Mentor!]!
+  mentorsCount(cursor: MentorWhereUniqueInput, orderBy: MentorOrderByInput, skip: Int, take: Int, where: MentorWhereInput): Int!
   project(where: ProjectWhereUniqueInput!): Project
-  projects(orderBy: ProjectOrderByInput, skip: Int, where: ProjectWhereInput): [Project!]!
-  projectsCount: Int!
+  projects(cursor: ProjectWhereUniqueInput, orderBy: ProjectOrderByInput, skip: Int, take: Int, where: ProjectWhereInput): [Project!]!
+  projectsCount(cursor: ProjectWhereUniqueInput, orderBy: ProjectOrderByInput, skip: Int, take: Int, where: ProjectWhereInput): Int!
   schedule(where: ScheduleWhereUniqueInput!): Schedule
-  schedules(orderBy: ScheduleOrderByInput, skip: Int, where: ScheduleWhereInput): [Schedule!]!
-  schedulesCount: Int!
+  schedules(cursor: ScheduleWhereUniqueInput, orderBy: ScheduleOrderByInput, skip: Int, take: Int, where: ScheduleWhereInput): [Schedule!]!
+  schedulesCount(cursor: ScheduleWhereUniqueInput, orderBy: ScheduleOrderByInput, skip: Int, take: Int, where: ScheduleWhereInput): Int!
   team(where: TeamWhereUniqueInput!): Team
   teamChallengeVote(where: TeamChallengeVoteWhereUniqueInput!): TeamChallengeVote
-  teamChallengeVotes(orderBy: TeamChallengeVoteOrderByInput, skip: Int, where: TeamChallengeVoteWhereInput): [TeamChallengeVote!]!
-  teamChallengeVotesCount: Int!
-  teams(orderBy: TeamOrderByInput, skip: Int, where: TeamWhereInput): [Team!]!
-  teamsCount: Int!
+  teamChallengeVotes(cursor: TeamChallengeVoteWhereUniqueInput, orderBy: TeamChallengeVoteOrderByInput, skip: Int, take: Int, where: TeamChallengeVoteWhereInput): [TeamChallengeVote!]!
+  teamChallengeVotesCount(cursor: TeamChallengeVoteWhereUniqueInput, orderBy: TeamChallengeVoteOrderByInput, skip: Int, take: Int, where: TeamChallengeVoteWhereInput): Int!
+  teams(cursor: TeamWhereUniqueInput, orderBy: TeamOrderByInput, skip: Int, take: Int, where: TeamWhereInput): [Team!]!
+  teamsCount(cursor: TeamWhereUniqueInput, orderBy: TeamOrderByInput, skip: Int, take: Int, where: TeamWhereInput): Int!
   user(where: UserWhereUniqueInput!): User
   userRole(where: UserRoleWhereUniqueInput!): UserRole
-  userRoles(orderBy: UserRoleOrderByInput, skip: Int, where: UserRoleWhereInput): [UserRole!]!
-  userRolesCount: Int!
-  users(orderBy: UserOrderByInput, skip: Int, where: UserWhereInput): [User!]!
-  usersCount: Int!
+  userRoles(cursor: UserRoleWhereUniqueInput, orderBy: UserRoleOrderByInput, skip: Int, take: Int, where: UserRoleWhereInput): [UserRole!]!
+  userRolesCount(cursor: UserRoleWhereUniqueInput, orderBy: UserRoleOrderByInput, skip: Int, take: Int, where: UserRoleWhereInput): Int!
+  users(cursor: UserWhereUniqueInput, orderBy: UserOrderByInput, skip: Int, take: Int, where: UserWhereInput): [User!]!
+  usersCount(cursor: UserWhereUniqueInput, orderBy: UserOrderByInput, skip: Int, take: Int, where: UserWhereInput): Int!
 }
 
 type RecreateAllTeamsResult {
@@ -2045,12 +2045,12 @@ input StringFilter {
 
 type Team {
   challengeSelected: Challenge
-  challengesToSelect(skip: Int): [Challenge!]!
+  challengesToSelect(cursor: ChallengeWhereUniqueInput, skip: Int, take: Int): [Challenge!]!
   challengesToSelectWithMyVotes: [ChallengeWithMyVote!]!
   id: String!
-  members(skip: Int): [User!]!
+  members(cursor: UserWhereUniqueInput, skip: Int, take: Int): [User!]!
   primaryTopic: HackerTopic
-  projects(skip: Int): [Project!]!
+  projects(cursor: ProjectWhereUniqueInput, skip: Int, take: Int): [Project!]!
   slack: SlackConversation
   tags: [String!]!
 }
@@ -2687,9 +2687,9 @@ type User {
   email: String!
   facebook: String
   firstname: String!
-  hackerSkills(skip: Int): [HackerSkill!]!
-  hackerTopics(skip: Int): [HackerTopic!]!
-  hackerTypes(skip: Int): [HackerType!]!
+  hackerSkills(cursor: HackerSkillWhereUniqueInput, skip: Int, take: Int): [HackerSkill!]!
+  hackerTopics(cursor: HackerTopicWhereUniqueInput, skip: Int, take: Int): [HackerTopic!]!
+  hackerTypes(cursor: HackerTypeWhereUniqueInput, skip: Int, take: Int): [HackerType!]!
   id: String!
   instagram: String
   languages: [String!]!
@@ -2699,7 +2699,7 @@ type User {
   phoneNumber: String!
   possibleTeamMemberEmails: String
   profilePhoto: Image
-  roles(skip: Int): [UserRole!]!
+  roles(cursor: UserRoleWhereUniqueInput, skip: Int, take: Int): [UserRole!]!
   team: Team
   twitter: String
 }
@@ -3202,7 +3202,7 @@ input UserResumeTokenWhereUniqueInput {
 
 type UserRole {
   id: String!
-  users(skip: Int): [User!]!
+  users(cursor: UserWhereUniqueInput, skip: Int, take: Int): [User!]!
 }
 
 input UserRoleCreateInput {

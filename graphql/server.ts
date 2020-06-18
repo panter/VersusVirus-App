@@ -22,7 +22,7 @@ import * as mentor from "./modules/mentor";
 import * as broadcast from "./modules/broadcast";
 import getUserFromToken from "./modules/user/getUserFromToken";
 import { rule, allow, shield } from "graphql-shield";
-import makeAdminCompatible from "./makeAdminCompatible";
+import { addCrudResolvers } from "@ra-data-prisma/backend";
 const typegenPath = (p: string) =>
   process.env.PWD && path.join(process.env.PWD, p);
 
@@ -39,21 +39,23 @@ const schema = makeSchema({
     mentor,
     broadcast,
 
-    makeAdminCompatible("Challenge"),
-    makeAdminCompatible("Team"),
-    makeAdminCompatible("TeamChallengeVote"),
-    makeAdminCompatible("User"),
-    makeAdminCompatible("UserRole"),
-    makeAdminCompatible("Mentor"),
-    makeAdminCompatible("Schedule"),
-    makeAdminCompatible("Project"),
-    makeAdminCompatible("HackerTopic"),
-    makeAdminCompatible("HackerSkill"),
-    makeAdminCompatible("HackerType"),
-    makeAdminCompatible("Image"),
+    addCrudResolvers("Challenge"),
+    addCrudResolvers("Team"),
+    addCrudResolvers("TeamChallengeVote"),
+    addCrudResolvers("User"),
+    addCrudResolvers("UserRole"),
+    addCrudResolvers("Mentor"),
+    addCrudResolvers("Schedule"),
+    addCrudResolvers("Project"),
+    addCrudResolvers("HackerTopic"),
+    addCrudResolvers("HackerSkill"),
+    addCrudResolvers("HackerType"),
+    addCrudResolvers("Image"),
   ],
   plugins: [
     nexusPrismaPlugin({
+      experimentalCRUD: true,
+      paginationStrategy: "prisma",
       outputs: {
         typegen: typegenPath("./generated/nexus-prisma.ts"),
       },

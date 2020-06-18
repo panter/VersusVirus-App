@@ -3990,26 +3990,38 @@ export interface NexusGenFieldTypes {
 export interface NexusGenArgTypes {
   Challenge: {
     projects: { // args
+      cursor?: NexusGenInputs['ProjectWhereUniqueInput'] | null; // ProjectWhereUniqueInput
       skip?: number | null; // Int
+      take?: number | null; // Int
     }
     teamsThatCanSelectThisChallenge: { // args
+      cursor?: NexusGenInputs['TeamWhereUniqueInput'] | null; // TeamWhereUniqueInput
       skip?: number | null; // Int
+      take?: number | null; // Int
     }
     teamsThatSelectedThisChallenge: { // args
+      cursor?: NexusGenInputs['TeamWhereUniqueInput'] | null; // TeamWhereUniqueInput
       skip?: number | null; // Int
+      take?: number | null; // Int
     }
     usersThatPreferThisChallenge: { // args
+      cursor?: NexusGenInputs['UserWhereUniqueInput'] | null; // UserWhereUniqueInput
       skip?: number | null; // Int
+      take?: number | null; // Int
     }
   }
   HackerTopic: {
     primaryChallenges: { // args
+      cursor?: NexusGenInputs['ChallengeWhereUniqueInput'] | null; // ChallengeWhereUniqueInput
       skip?: number | null; // Int
+      take?: number | null; // Int
     }
   }
   Mentor: {
     topics: { // args
+      cursor?: NexusGenInputs['HackerTopicWhereUniqueInput'] | null; // HackerTopicWhereUniqueInput
       skip?: number | null; // Int
+      take?: number | null; // Int
     }
   }
   Mutation: {
@@ -4304,7 +4316,9 @@ export interface NexusGenArgTypes {
   }
   Project: {
     images: { // args
+      cursor?: NexusGenInputs['ImageWhereUniqueInput'] | null; // ImageWhereUniqueInput
       skip?: number | null; // Int
+      take?: number | null; // Int
     }
   }
   Query: {
@@ -4312,64 +4326,136 @@ export interface NexusGenArgTypes {
       where: NexusGenInputs['ChallengeWhereUniqueInput']; // ChallengeWhereUniqueInput!
     }
     challenges: { // args
+      cursor?: NexusGenInputs['ChallengeWhereUniqueInput'] | null; // ChallengeWhereUniqueInput
       orderBy?: NexusGenInputs['ChallengeOrderByInput'] | null; // ChallengeOrderByInput
       skip?: number | null; // Int
+      take?: number | null; // Int
+      where?: NexusGenInputs['ChallengeWhereInput'] | null; // ChallengeWhereInput
+    }
+    challengesCount: { // args
+      cursor?: NexusGenInputs['ChallengeWhereUniqueInput'] | null; // ChallengeWhereUniqueInput
+      orderBy?: NexusGenInputs['ChallengeOrderByInput'] | null; // ChallengeOrderByInput
+      skip?: number | null; // Int
+      take?: number | null; // Int
       where?: NexusGenInputs['ChallengeWhereInput'] | null; // ChallengeWhereInput
     }
     hackerSkill: { // args
       where: NexusGenInputs['HackerSkillWhereUniqueInput']; // HackerSkillWhereUniqueInput!
     }
     hackerSkills: { // args
+      cursor?: NexusGenInputs['HackerSkillWhereUniqueInput'] | null; // HackerSkillWhereUniqueInput
       orderBy?: NexusGenInputs['HackerSkillOrderByInput'] | null; // HackerSkillOrderByInput
       skip?: number | null; // Int
+      take?: number | null; // Int
+      where?: NexusGenInputs['HackerSkillWhereInput'] | null; // HackerSkillWhereInput
+    }
+    hackerSkillsCount: { // args
+      cursor?: NexusGenInputs['HackerSkillWhereUniqueInput'] | null; // HackerSkillWhereUniqueInput
+      orderBy?: NexusGenInputs['HackerSkillOrderByInput'] | null; // HackerSkillOrderByInput
+      skip?: number | null; // Int
+      take?: number | null; // Int
       where?: NexusGenInputs['HackerSkillWhereInput'] | null; // HackerSkillWhereInput
     }
     hackerTopic: { // args
       where: NexusGenInputs['HackerTopicWhereUniqueInput']; // HackerTopicWhereUniqueInput!
     }
     hackerTopics: { // args
+      cursor?: NexusGenInputs['HackerTopicWhereUniqueInput'] | null; // HackerTopicWhereUniqueInput
       orderBy?: NexusGenInputs['HackerTopicOrderByInput'] | null; // HackerTopicOrderByInput
       skip?: number | null; // Int
+      take?: number | null; // Int
+      where?: NexusGenInputs['HackerTopicWhereInput'] | null; // HackerTopicWhereInput
+    }
+    hackerTopicsCount: { // args
+      cursor?: NexusGenInputs['HackerTopicWhereUniqueInput'] | null; // HackerTopicWhereUniqueInput
+      orderBy?: NexusGenInputs['HackerTopicOrderByInput'] | null; // HackerTopicOrderByInput
+      skip?: number | null; // Int
+      take?: number | null; // Int
       where?: NexusGenInputs['HackerTopicWhereInput'] | null; // HackerTopicWhereInput
     }
     hackerType: { // args
       where: NexusGenInputs['HackerTypeWhereUniqueInput']; // HackerTypeWhereUniqueInput!
     }
     hackerTypes: { // args
+      cursor?: NexusGenInputs['HackerTypeWhereUniqueInput'] | null; // HackerTypeWhereUniqueInput
       orderBy?: NexusGenInputs['HackerTypeOrderByInput'] | null; // HackerTypeOrderByInput
       skip?: number | null; // Int
+      take?: number | null; // Int
+      where?: NexusGenInputs['HackerTypeWhereInput'] | null; // HackerTypeWhereInput
+    }
+    hackerTypesCount: { // args
+      cursor?: NexusGenInputs['HackerTypeWhereUniqueInput'] | null; // HackerTypeWhereUniqueInput
+      orderBy?: NexusGenInputs['HackerTypeOrderByInput'] | null; // HackerTypeOrderByInput
+      skip?: number | null; // Int
+      take?: number | null; // Int
       where?: NexusGenInputs['HackerTypeWhereInput'] | null; // HackerTypeWhereInput
     }
     image: { // args
       where: NexusGenInputs['ImageWhereUniqueInput']; // ImageWhereUniqueInput!
     }
     images: { // args
+      cursor?: NexusGenInputs['ImageWhereUniqueInput'] | null; // ImageWhereUniqueInput
       orderBy?: NexusGenInputs['ImageOrderByInput'] | null; // ImageOrderByInput
       skip?: number | null; // Int
+      take?: number | null; // Int
+      where?: NexusGenInputs['ImageWhereInput'] | null; // ImageWhereInput
+    }
+    imagesCount: { // args
+      cursor?: NexusGenInputs['ImageWhereUniqueInput'] | null; // ImageWhereUniqueInput
+      orderBy?: NexusGenInputs['ImageOrderByInput'] | null; // ImageOrderByInput
+      skip?: number | null; // Int
+      take?: number | null; // Int
       where?: NexusGenInputs['ImageWhereInput'] | null; // ImageWhereInput
     }
     mentor: { // args
       where: NexusGenInputs['MentorWhereUniqueInput']; // MentorWhereUniqueInput!
     }
     mentors: { // args
+      cursor?: NexusGenInputs['MentorWhereUniqueInput'] | null; // MentorWhereUniqueInput
       orderBy?: NexusGenInputs['MentorOrderByInput'] | null; // MentorOrderByInput
       skip?: number | null; // Int
+      take?: number | null; // Int
+      where?: NexusGenInputs['MentorWhereInput'] | null; // MentorWhereInput
+    }
+    mentorsCount: { // args
+      cursor?: NexusGenInputs['MentorWhereUniqueInput'] | null; // MentorWhereUniqueInput
+      orderBy?: NexusGenInputs['MentorOrderByInput'] | null; // MentorOrderByInput
+      skip?: number | null; // Int
+      take?: number | null; // Int
       where?: NexusGenInputs['MentorWhereInput'] | null; // MentorWhereInput
     }
     project: { // args
       where: NexusGenInputs['ProjectWhereUniqueInput']; // ProjectWhereUniqueInput!
     }
     projects: { // args
+      cursor?: NexusGenInputs['ProjectWhereUniqueInput'] | null; // ProjectWhereUniqueInput
       orderBy?: NexusGenInputs['ProjectOrderByInput'] | null; // ProjectOrderByInput
       skip?: number | null; // Int
+      take?: number | null; // Int
+      where?: NexusGenInputs['ProjectWhereInput'] | null; // ProjectWhereInput
+    }
+    projectsCount: { // args
+      cursor?: NexusGenInputs['ProjectWhereUniqueInput'] | null; // ProjectWhereUniqueInput
+      orderBy?: NexusGenInputs['ProjectOrderByInput'] | null; // ProjectOrderByInput
+      skip?: number | null; // Int
+      take?: number | null; // Int
       where?: NexusGenInputs['ProjectWhereInput'] | null; // ProjectWhereInput
     }
     schedule: { // args
       where: NexusGenInputs['ScheduleWhereUniqueInput']; // ScheduleWhereUniqueInput!
     }
     schedules: { // args
+      cursor?: NexusGenInputs['ScheduleWhereUniqueInput'] | null; // ScheduleWhereUniqueInput
       orderBy?: NexusGenInputs['ScheduleOrderByInput'] | null; // ScheduleOrderByInput
       skip?: number | null; // Int
+      take?: number | null; // Int
+      where?: NexusGenInputs['ScheduleWhereInput'] | null; // ScheduleWhereInput
+    }
+    schedulesCount: { // args
+      cursor?: NexusGenInputs['ScheduleWhereUniqueInput'] | null; // ScheduleWhereUniqueInput
+      orderBy?: NexusGenInputs['ScheduleOrderByInput'] | null; // ScheduleOrderByInput
+      skip?: number | null; // Int
+      take?: number | null; // Int
       where?: NexusGenInputs['ScheduleWhereInput'] | null; // ScheduleWhereInput
     }
     team: { // args
@@ -4379,13 +4465,31 @@ export interface NexusGenArgTypes {
       where: NexusGenInputs['TeamChallengeVoteWhereUniqueInput']; // TeamChallengeVoteWhereUniqueInput!
     }
     teamChallengeVotes: { // args
+      cursor?: NexusGenInputs['TeamChallengeVoteWhereUniqueInput'] | null; // TeamChallengeVoteWhereUniqueInput
       orderBy?: NexusGenInputs['TeamChallengeVoteOrderByInput'] | null; // TeamChallengeVoteOrderByInput
       skip?: number | null; // Int
+      take?: number | null; // Int
+      where?: NexusGenInputs['TeamChallengeVoteWhereInput'] | null; // TeamChallengeVoteWhereInput
+    }
+    teamChallengeVotesCount: { // args
+      cursor?: NexusGenInputs['TeamChallengeVoteWhereUniqueInput'] | null; // TeamChallengeVoteWhereUniqueInput
+      orderBy?: NexusGenInputs['TeamChallengeVoteOrderByInput'] | null; // TeamChallengeVoteOrderByInput
+      skip?: number | null; // Int
+      take?: number | null; // Int
       where?: NexusGenInputs['TeamChallengeVoteWhereInput'] | null; // TeamChallengeVoteWhereInput
     }
     teams: { // args
+      cursor?: NexusGenInputs['TeamWhereUniqueInput'] | null; // TeamWhereUniqueInput
       orderBy?: NexusGenInputs['TeamOrderByInput'] | null; // TeamOrderByInput
       skip?: number | null; // Int
+      take?: number | null; // Int
+      where?: NexusGenInputs['TeamWhereInput'] | null; // TeamWhereInput
+    }
+    teamsCount: { // args
+      cursor?: NexusGenInputs['TeamWhereUniqueInput'] | null; // TeamWhereUniqueInput
+      orderBy?: NexusGenInputs['TeamOrderByInput'] | null; // TeamOrderByInput
+      skip?: number | null; // Int
+      take?: number | null; // Int
       where?: NexusGenInputs['TeamWhereInput'] | null; // TeamWhereInput
     }
     user: { // args
@@ -4395,44 +4499,78 @@ export interface NexusGenArgTypes {
       where: NexusGenInputs['UserRoleWhereUniqueInput']; // UserRoleWhereUniqueInput!
     }
     userRoles: { // args
+      cursor?: NexusGenInputs['UserRoleWhereUniqueInput'] | null; // UserRoleWhereUniqueInput
       orderBy?: NexusGenInputs['UserRoleOrderByInput'] | null; // UserRoleOrderByInput
       skip?: number | null; // Int
+      take?: number | null; // Int
+      where?: NexusGenInputs['UserRoleWhereInput'] | null; // UserRoleWhereInput
+    }
+    userRolesCount: { // args
+      cursor?: NexusGenInputs['UserRoleWhereUniqueInput'] | null; // UserRoleWhereUniqueInput
+      orderBy?: NexusGenInputs['UserRoleOrderByInput'] | null; // UserRoleOrderByInput
+      skip?: number | null; // Int
+      take?: number | null; // Int
       where?: NexusGenInputs['UserRoleWhereInput'] | null; // UserRoleWhereInput
     }
     users: { // args
+      cursor?: NexusGenInputs['UserWhereUniqueInput'] | null; // UserWhereUniqueInput
       orderBy?: NexusGenInputs['UserOrderByInput'] | null; // UserOrderByInput
       skip?: number | null; // Int
+      take?: number | null; // Int
+      where?: NexusGenInputs['UserWhereInput'] | null; // UserWhereInput
+    }
+    usersCount: { // args
+      cursor?: NexusGenInputs['UserWhereUniqueInput'] | null; // UserWhereUniqueInput
+      orderBy?: NexusGenInputs['UserOrderByInput'] | null; // UserOrderByInput
+      skip?: number | null; // Int
+      take?: number | null; // Int
       where?: NexusGenInputs['UserWhereInput'] | null; // UserWhereInput
     }
   }
   Team: {
     challengesToSelect: { // args
+      cursor?: NexusGenInputs['ChallengeWhereUniqueInput'] | null; // ChallengeWhereUniqueInput
       skip?: number | null; // Int
+      take?: number | null; // Int
     }
     members: { // args
+      cursor?: NexusGenInputs['UserWhereUniqueInput'] | null; // UserWhereUniqueInput
       skip?: number | null; // Int
+      take?: number | null; // Int
     }
     projects: { // args
+      cursor?: NexusGenInputs['ProjectWhereUniqueInput'] | null; // ProjectWhereUniqueInput
       skip?: number | null; // Int
+      take?: number | null; // Int
     }
   }
   User: {
     hackerSkills: { // args
+      cursor?: NexusGenInputs['HackerSkillWhereUniqueInput'] | null; // HackerSkillWhereUniqueInput
       skip?: number | null; // Int
+      take?: number | null; // Int
     }
     hackerTopics: { // args
+      cursor?: NexusGenInputs['HackerTopicWhereUniqueInput'] | null; // HackerTopicWhereUniqueInput
       skip?: number | null; // Int
+      take?: number | null; // Int
     }
     hackerTypes: { // args
+      cursor?: NexusGenInputs['HackerTypeWhereUniqueInput'] | null; // HackerTypeWhereUniqueInput
       skip?: number | null; // Int
+      take?: number | null; // Int
     }
     roles: { // args
+      cursor?: NexusGenInputs['UserRoleWhereUniqueInput'] | null; // UserRoleWhereUniqueInput
       skip?: number | null; // Int
+      take?: number | null; // Int
     }
   }
   UserRole: {
     users: { // args
+      cursor?: NexusGenInputs['UserWhereUniqueInput'] | null; // UserWhereUniqueInput
       skip?: number | null; // Int
+      take?: number | null; // Int
     }
   }
 }

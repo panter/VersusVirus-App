@@ -1862,7 +1862,7 @@
   resolved "https://registry.yarnpkg.com/@next/react-refresh-utils/-/react-refresh-utils-9.4.4.tgz#d94cbb3b354a07f1f5b80e554d6b9e34aba99e41"
   integrity sha512-9nKENeWRI6kQk44TbeqleIVtNLfcS3klVUepzl/ZCqzR5Bi06uqBCD277hdVvG/wL1pxA+R/pgJQLqnF5E2wPQ==
 
-"@nexus/schema@^0.14.1":
+"@nexus/schema@^0.14.0":
   version "0.14.0"
   resolved "https://registry.yarnpkg.com/@nexus/schema/-/schema-0.14.0.tgz#3242f4d02ec9458914deb638b434bcfbd5888d2e"
   integrity sha512-niJFcOm1F2s3kwj+j3ips4sIIJaTNh5Auq+zcHwOsRBqSYsFJnA/8QUKMb1wjVIEqS+Jl71Sj4xFdg3/njlm9A==
@@ -2120,18 +2120,18 @@
   resolved "https://registry.yarnpkg.com/@protobufjs/utf8/-/utf8-1.1.0.tgz#a777360b5b39a1a2e5106f8e858f2fd2d060c570"
   integrity sha1-p3c2C1s5oaLlEG+OhY8v0tBgxXA=
 
-"@ra-data-prisma/backend@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@ra-data-prisma/backend/-/backend-1.1.0.tgz#655b54cb5b9a55332e13f83c7e38671086a004b0"
-  integrity sha512-v4wwdb45O1uz9B91d8CVAHzOLzTFT+ZrLlrHa0+XcszQ5lZgfBhKSj94pvH4ReFlyYyvE7JpsjlJ1of489QVsw==
+"@ra-data-prisma/backend@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@ra-data-prisma/backend/-/backend-2.0.1.tgz#f7b9d42380fe66de409c7e9d8dbf4093221e729f"
+  integrity sha512-1lEjoZXY4O8qt5AuWgKiWEhM50J4+/ADTWm1BwK2IFYVFEip6EFhYMkg7zPdDClSqqFOUUSJZ9TPvo4bdnmqaA==
   dependencies:
     lodash "^4.17.15"
     pluralize "^7.0.0"
 
-"@ra-data-prisma/dataprovider@^1.2.1":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@ra-data-prisma/dataprovider/-/dataprovider-1.2.1.tgz#c58147b574c2cd5936168112d46b89f3d05d9ef7"
-  integrity sha512-ZTKXwvV4WmyNg6hZM5608x0oXeRpkk87mV0ocyujnkOp2saK0Zbiy5STRftDKq4n9OKbGbq+0EtTkQpepkuS4Q==
+"@ra-data-prisma/dataprovider@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@ra-data-prisma/dataprovider/-/dataprovider-2.0.1.tgz#ea475cafd77f2f065df03cb002e55c1d3b31b5de"
+  integrity sha512-6p7rLYeLlBY6Wr0oYEiypLlPAFT7FGLoEzZuIIV2uoZYn9D7aYzIKPeNzifMlItuD+X6925R2/CbRGasO7jLAQ==
   dependencies:
     lodash "^4.17.15"
     pluralize "^8.0.0"
@@ -10779,10 +10779,10 @@ next@^9.4.4:
     webpack "4.43.0"
     webpack-sources "1.4.3"
 
-nexus-prisma@^0.14.0:
-  version "0.14.0"
-  resolved "https://registry.yarnpkg.com/nexus-prisma/-/nexus-prisma-0.14.0.tgz#4d2d1396f92cc9aa8fa1265c194312e8b5f978a1"
-  integrity sha512-dH5rgoyLZGqIE1Y+HZfN9uoq8iZjb7OkJezi5ez+oVip+4smsVk9CmjMZBWlP14Fk5C/O7PKxj5Mytb8isTfRg==
+nexus-prisma@^0.15.0:
+  version "0.15.0"
+  resolved "https://registry.yarnpkg.com/nexus-prisma/-/nexus-prisma-0.15.0.tgz#c25ffb540a1e5babc1632a6d6cba873397b221f4"
+  integrity sha512-KphlvfaSK4d4ilS1ffP72UFqISkSLnHMMFGoshgO/igMPCDLwQVbwGIgFXMEl7GRh/r9NfaiEj64ir5D16gbjQ==
   dependencies:
     camelcase "^6.0.0"
     fs-extra "^9.0.0"
